@@ -12,18 +12,16 @@ function distanceTravelledInFeet(start, end){
 
 
 function calculatesFarePrice(start, end){
-    const distanceFromHqInFeet=264;
-    const totalDistance=Math.abs ((end-start),distanceFromHqInFeet);
-    if (totalDistance<400){
+    const oneFoot=264;
+    const totalDistance=Math.abs ((end-start)*oneFoot);
+    if (totalDistance<=400){
         return 0;
 }
-else if (totalDistance>400 && totalDistance<2000)
-{
-return ((totalDistance-400)(1/50));
+else if (totalDistance>400 && totalDistance<=2000){
+    return 2.56 }
+else if (totalDistance > 2000 && totalDistance<= 2500){
+    return 25
 }
-else if (totalDistance>2000 && totalDistance<2500)
-{
-    return 25;
-}
+
 else return ("cannot travel that far")
 }
